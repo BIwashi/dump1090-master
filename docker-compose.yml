@@ -22,5 +22,6 @@ services:
       - /dev/tty.usbmodem01:/dev/tty.usbmodem01
       - /dev/tty.usbmodem02:/dev/tty.usbmodem02
       - /dev/tty.usbmodem03:/dev/tty.usbmodem03
+      - /dev/ttyAMA0:/dev/ttyAMA0
     privileged: true
     

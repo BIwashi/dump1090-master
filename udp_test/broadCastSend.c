@@ -92,7 +92,7 @@ broadcast_sendmsg(bc_info_t *info, char *errmsg)
         }
 
         /* 5秒に一回送信する */
-        sleep(5);
+        sleep(1);
     }
 
     return(0);
@@ -139,6 +139,7 @@ initialize(int argc, char *argv[], bc_info_t *info, char *errmsg)
     }
 
     memset(info, 0, sizeof(bc_info_t));
+    *argv[3] = "etgwdwtwsds";
     info->ipaddr     = argv[1];
     info->port       = atoi(argv[2]);
     info->msg        = argv[3];
@@ -159,6 +160,8 @@ main(int argc, char *argv[])
     bc_info_t info = {0};
     char errmsg[BUFSIZ];
 
+    // argv[3] = 2020;
+
     rc = initialize(argc, argv, &info, errmsg);
     if(rc != 0){
         fprintf(stderr, "Error: %s\n", errmsg);
@@ -173,3 +176,5 @@ main(int argc, char *argv[])
 
     return(0);
 }
+
+
