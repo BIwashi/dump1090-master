@@ -20,7 +20,7 @@ RUN apt-get install -y wget
 RUN apt-get install -y pkg-config
 RUN apt-get install -y librtlsdr-dev
 RUN apt-get install -y rtl-sdr
-# RUN apt-get install -y
+RUN apt-get install -y iproute2
 # RUN apt-get install -y
 # RUN apt-get install -y
 
