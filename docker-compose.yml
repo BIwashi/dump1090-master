@@ -1,0 +1,26 @@
+version: '3'
+services:
+  dump:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: dump_container
+    image: biwashi/dump1090
+    tty: true
+    # カレントディレクトリとコンテナ内のuer/srcをボリューム
+    volumes:
+      - ./:/home/user/
+      - /dev/:/dev/
+    ports:
+      - "5760:5760"
+      - "8080:8080"
+      - "30000-30010:30000-30010"
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      # 調べないとわからない
+      - /dev/tty.usbmodem01:/dev/tty.usbmodem01
+      - /dev/tty.usbmodem02:/dev/tty.usbmodem02
+      - /dev/tty.usbmodem03:/dev/tty.usbmodem03
+    privileged: true
+    
